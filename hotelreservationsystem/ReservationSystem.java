@@ -21,7 +21,7 @@ public class ReservationSystem {
             System.out.println("Weekday Rate (Rewards Customer): $" + hotel.getWeekdayRateRewardsCustomer());
             System.out.println("Weekend Rate (Rewards Customer): $" + hotel.getWeekendRateRewardsCustomer());
             System.out.println("Rating: " + hotel.getRating());
-            System.out.println("----------------");
+            System.out.println("---------------");
         }
     }
 
@@ -30,5 +30,12 @@ public class ReservationSystem {
                 .min(Comparator.comparingDouble(hotel -> hotel.calculateTotalRate(startDate, endDate, isRewardsCustomer)));
 
         return cheapestHotel.orElse(null);
+    }
+
+    public Hotel findBestHotel(LocalDate startDate, LocalDate endDate, boolean isRewardsCustomer) {
+        Optional<Hotel> bestHotel = hotels.stream()
+                .max(Comparator.comparingDouble(hotel -> hotel.calculateTotalRate(startDate, endDate, isRewardsCustomer)));
+
+        return bestHotel.orElse(null);
     }
 }
