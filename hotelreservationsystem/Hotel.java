@@ -8,14 +8,16 @@ class Hotel {
     private double weekendRateRegularCustomer;
     private double weekdayRateRewardsCustomer;
     private double weekendRateRewardsCustomer;
+    private int rating;
 
     public Hotel(String name, double weekdayRateRegularCustomer, double weekendRateRegularCustomer,
-                 double weekdayRateRewardsCustomer, double weekendRateRewardsCustomer) {
+                 double weekdayRateRewardsCustomer, double weekendRateRewardsCustomer, int rating) {
         this.name = name;
         this.weekdayRateRegularCustomer = weekdayRateRegularCustomer;
         this.weekendRateRegularCustomer = weekendRateRegularCustomer;
         this.weekdayRateRewardsCustomer = weekdayRateRewardsCustomer;
         this.weekendRateRewardsCustomer = weekendRateRewardsCustomer;
+        this.rating = rating;
     }
 
     public String getName() {
@@ -36,6 +38,10 @@ class Hotel {
 
     public double getWeekendRateRewardsCustomer() {
         return weekendRateRewardsCustomer;
+    }
+
+    public int getRating() {
+        return rating;
     }
 
     public double calculateTotalRate(LocalDate startDate, LocalDate endDate, boolean isRewardsCustomer) {

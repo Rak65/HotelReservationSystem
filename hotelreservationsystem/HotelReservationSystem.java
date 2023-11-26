@@ -6,9 +6,9 @@ public class HotelReservationSystem {
     public static void main(String[] args) {
         ReservationSystem reservationSystem = new ReservationSystem();
 
-        reservationSystem.addHotel(new Hotel("Lakewood", 110, 90, 80, 80));
-        reservationSystem.addHotel(new Hotel("Bridgewood", 160, 60, 110, 50));
-        reservationSystem.addHotel(new Hotel("Ridgewood", 220, 150, 100, 40));
+        reservationSystem.addHotel(new Hotel("Lakewood", 110, 90, 80, 80,3));
+        reservationSystem.addHotel(new Hotel("Bridgewood", 160, 60, 110, 50,4));
+        reservationSystem.addHotel(new Hotel("Ridgewood", 220, 150, 100, 40,5));
 
         System.out.println("Available Hotels:");
         reservationSystem.displayHotels();
