@@ -13,8 +13,8 @@ public class HotelReservationSystem {
         System.out.println("Available Hotels:");
         reservationSystem.displayHotels();
 
-        LocalDate startDate = LocalDate.of(2020, 9, 10);
-        LocalDate endDate = LocalDate.of(2020, 9, 11);
+        LocalDate startDate = LocalDate.of(2020, 9, 11);
+        LocalDate endDate = LocalDate.of(2020, 9, 12);
 
         Hotel cheapestHotelRegular = reservationSystem.findCheapestHotel(startDate, endDate, false);
         Hotel cheapestHotelRewards = reservationSystem.findCheapestHotel(startDate, endDate, true);
