@@ -21,7 +21,7 @@ public class ReservationSystem {
             System.out.println("Weekday Rate (Rewards Customer): $" + hotel.getWeekdayRateRewardsCustomer());
             System.out.println("Weekend Rate (Rewards Customer): $" + hotel.getWeekendRateRewardsCustomer());
             System.out.println("Rating: " + hotel.getRating());
-            System.out.println("---------------");
+            System.out.println("----------------");
         }
     }
 
