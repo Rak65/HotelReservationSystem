@@ -1,25 +1,30 @@
 package com.hotelreservationsystem;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
+import java.util.Scanner;
 
 public class HotelReservationSystem {
-    private List<Hotel> hotels;
-
-    public HotelReservationSystem() {
-        this.hotels = new ArrayList<>();
-    }
-
-    public void addHotel(String name, int weekdayRateRegularCustomer, int weekendRateRegularCustomer) {
-        Hotel newHotel = new Hotel(name, weekdayRateRegularCustomer, weekendRateRegularCustomer);
-        hotels.add(newHotel);
-        System.out.println(name + " "+weekdayRateRegularCustomer+" "+weekendRateRegularCustomer);
-    }
-
     public static void main(String[] args) {
-        HotelReservationSystem reservationSystem =new HotelReservationSystem();
-        reservationSystem.addHotel("Lakewood", 110, 90);
-        reservationSystem.addHotel("Bridgewood", 160, 60);
-        reservationSystem.addHotel("Ridgewood",  220, 150);
+        ReservationSystem reservationSystem = new ReservationSystem();
+        Scanner scanner = new Scanner(System.in);
+
+        reservationSystem.addHotel(new Hotel("Lakewood", 110, 90));
+        reservationSystem.addHotel(new Hotel("Bridgewood", 160, 60));
+        reservationSystem.addHotel(new Hotel("Ridgewood", 220, 150));
+
+        System.out.println("Available Hotels:");
+        reservationSystem.displayHotels();
+
+        LocalDate startDate = LocalDate.of(2020, 9, 10);
+        LocalDate endDate = LocalDate.of(2020, 9, 11);
+
+        Hotel cheapestHotel = reservationSystem.findCheapestHotel(startDate, endDate);
+
+        if (cheapestHotel != null) {
+            System.out.println("Cheapest Hotel: " + cheapestHotel.getName() +
+                    ", Total Rates: $" + cheapestHotel.calculateTotalRate(startDate, endDate));
+        } else {
+            System.out.println("No hotels available.");
+        }
     }
 }
