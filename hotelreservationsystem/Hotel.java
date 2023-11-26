@@ -6,11 +6,16 @@ class Hotel {
     private String name;
     private double weekdayRateRegularCustomer;
     private double weekendRateRegularCustomer;
+    private double weekdayRateRewardsCustomer;
+    private double weekendRateRewardsCustomer;
 
-    public Hotel(String name, double weekdayRateRegularCustomer, double weekendRateRegularCustomer) {
+    public Hotel(String name, double weekdayRateRegularCustomer, double weekendRateRegularCustomer,
+                 double weekdayRateRewardsCustomer, double weekendRateRewardsCustomer) {
         this.name = name;
         this.weekdayRateRegularCustomer = weekdayRateRegularCustomer;
         this.weekendRateRegularCustomer = weekendRateRegularCustomer;
+        this.weekdayRateRewardsCustomer = weekdayRateRewardsCustomer;
+        this.weekendRateRewardsCustomer = weekendRateRewardsCustomer;
     }
 
     public String getName() {
@@ -25,7 +30,15 @@ class Hotel {
         return weekendRateRegularCustomer;
     }
 
-    public double calculateTotalRate(LocalDate startDate, LocalDate endDate) {
+    public double getWeekdayRateRewardsCustomer() {
+        return weekdayRateRewardsCustomer;
+    }
+
+    public double getWeekendRateRewardsCustomer() {
+        return weekendRateRewardsCustomer;
+    }
+
+    public double calculateTotalRate(LocalDate startDate, LocalDate endDate, boolean isRewardsCustomer) {
         long diff = endDate.toEpochDay() - startDate.toEpochDay() + 1;
         int weekdayCount = 0;
         int weekendCount = 0;
@@ -40,6 +53,10 @@ class Hotel {
             }
         }
 
-        return (weekdayCount * weekdayRateRegularCustomer) + (weekendCount * weekendRateRegularCustomer);
+        if (isRewardsCustomer) {
+            return (weekdayCount * weekdayRateRewardsCustomer) + (weekendCount * weekendRateRewardsCustomer);
+        } else {
+            return (weekdayCount * weekdayRateRegularCustomer) + (weekendCount * weekendRateRegularCustomer);
+        }
     }
 }
