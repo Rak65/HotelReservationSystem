@@ -15,17 +15,17 @@ public class HotelReservationSystem {
 
         LocalDate startDate = LocalDate.of(2020, 9, 11);
         LocalDate endDate = LocalDate.of(2020, 9, 12);
-
-        Hotel cheapestHotelRegular = reservationSystem.findCheapestHotel(startDate, endDate, false);
-        Hotel bestHotelRegular = reservationSystem.findBestHotel(startDate, endDate, false);
-
-        System.out.println("Cheapest Hotel (Regular Customer): " + cheapestHotelRegular.getName() +
-                ", Total Rates: $" + cheapestHotelRegular.calculateTotalRate(startDate, endDate, false) +
-                ", Rating: " + cheapestHotelRegular.getRating());
-
-        System.out.println("Best Hotel (Regular Customer): " + bestHotelRegular.getName() +
-                ", Total Rates: $" + bestHotelRegular.calculateTotalRate(startDate, endDate, false) +
-                ", Rating: " + bestHotelRegular.getRating());
+//
+//        Hotel cheapestHotelRegular = reservationSystem.findCheapestHotel(startDate, endDate, false);
+//        Hotel bestHotelRegular = reservationSystem.findBestHotel(startDate, endDate, false);
+//
+//        System.out.println("Cheapest Hotel (Regular Customer): " + cheapestHotelRegular.getName() +
+//                ", Total Rates: $" + cheapestHotelRegular.calculateTotalRate(startDate, endDate, false) +
+//                ", Rating: " + cheapestHotelRegular.getRating());
+//
+//        System.out.println("Best Hotel (Regular Customer): " + bestHotelRegular.getName() +
+//                ", Total Rates: $" + bestHotelRegular.calculateTotalRate(startDate, endDate, false) +
+//                ", Rating: " + bestHotelRegular.getRating());
         Hotel cheapestHotelRewards = reservationSystem.findCheapestHotel(startDate, endDate, true);
         Hotel bestHotelRewards = reservationSystem.findBestHotel(startDate, endDate, true);
 
