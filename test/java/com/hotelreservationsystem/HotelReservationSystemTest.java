@@ -9,7 +9,7 @@ class HotelReservationSystemTest {
 
     @Test
     void calculateTotalRateRegularCustomer() {
-        Hotel hotel = new Hotel("TestHotel", 100, 80, 90, 70, 4);
+        Hotel hotel = new Hotel("TestHotels", 100, 80, 90, 70, 4);
 
         LocalDate startDate = LocalDate.of(2023, 1, 1);
         LocalDate endDate = LocalDate.of(2023, 1, 3);
